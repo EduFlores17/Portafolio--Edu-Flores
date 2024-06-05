@@ -3,8 +3,11 @@
     --secundario: #142F3A;
     --nigga: #000000;
     --white: #ffffff;
+    --card: #1a3d4b;
     --links: #00be9f;
-
+    --github: #098b26;
+    --pagina: #90089c;
+    --sombreado: #303030b0;
     --mainfont: "Poppins", sans-serif;
 
 
@@ -93,7 +96,7 @@ ul{
 .header{
     background-color: var(--secundario);
     margin-bottom: 7%;
-
+    z-index: 1000;
     position: fixed;
     top: 0;
     left: 0;
@@ -394,6 +397,8 @@ ul{
 .footer{
     background-color: var(--nigga);
     margin-top: 2%;
+    position: relative;
+    z-index: 1000;
 }
 
 .footer-barra{
@@ -631,3 +636,221 @@ ul{
     }
 }
 
+/*--   proyectos.html   --*/
+/*--   proyectos.html   --*/
+.contcard__texto {
+    margin-top: 25rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+    place-items: center;
+}
+
+.card {
+    background-color: var(--card);
+    border-radius: 4rem;
+    overflow: hidden; /* Para asegurar que los bordes de los elementos internos sigan el borde de la tarjeta */
+    transition: box-shadow 0.5s ease, transform 2s ease; 
+    box-shadow: 0 0 7rem rgba(0, 0, 0, 0.3); /* Sombra alrededor de la tarjeta */
+}
+
+.card:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), inset 0 0 10rem rgba(0, 0, 0, 0.7); /* Sombra alrededor y dentro de la tarjeta */
+    transform: scale(1.1); /* Escalar la tarjeta */
+}
+
+.card-image {
+    position: relative; /* Asegurar el contexto de posicionamiento */
+    overflow: hidden; /* Evitar que la imagen ampliada se salga del contenedor */
+    border-top-left-radius: 4rem; /* Bordes redondeados en la parte superior de la imagen */
+    border-top-right-radius: 4rem; /* Bordes redondeados en la parte superior de la imagen */
+}
+
+.card-image1 {
+    width: 100%; /* Asegurar que la imagen ocupe todo el ancho del contenedor */
+    display: block; /* Asegurar que la imagen se comporte correctamente en el layout */
+    transition: transform 0.5s ease; /* Añadir transición suave para la transformación */
+}
+
+.card:hover .card-image1 {
+    transform: scale(1.1); /* Escalar la imagen cuando se hace hover en la tarjeta */
+    transition: 2s;
+}
+
+.card-titulo {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.card-texto {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.card-descripcion {
+    font-size: 1.3rem;
+    text-transform: none;
+}
+
+.zoom {
+    width: 80%; /* Ajustar tamaño según necesites */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.card-botons {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    gap: .6rem;
+    place-content: center;
+    
+}
+
+.card-boton {
+    background-color: var(--pagina);
+    font-size: 1.5rem;
+    max-width: 100%;
+    margin-bottom: 10%;
+    place-items: center;
+    
+}
+
+.github {
+    background-color: var(--github);
+    font-size: 1.5rem;
+}
+
+.card-boton:hover {
+    background-color: var(--secundario);
+}
+
+.github:hover {
+    background-color: var(--secundario);
+    font-size: 1.5rem;
+}
+
+.card-image__txt {
+    position: absolute; /* Posicionar el contenedor sobre la imagen */
+    bottom: 0; /* Posicionar en la parte inferior de la imagen */
+    height: 25%;
+    width: 100%; /* Asegurar que el contenedor cubra todo el ancho de la imagen */
+    background-color: var(--sombreado); /* Fondo sombreado con opacidad */
+}
+
+.card-content {
+    margin-top: 3rem;
+}
+
+@media (min-width: 1100px){
+    .contcard__texto {
+        margin-top: 25rem;
+    }
+    
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5rem;
+        place-items: center;
+    }
+    
+    .card {
+        background-color: var(--card);
+        border-radius: 4rem;
+        overflow: hidden; /* Para asegurar que los bordes de los elementos internos sigan el borde de la tarjeta */
+        transition: box-shadow 0.5s ease, transform 2s ease; 
+        box-shadow: 0 0 7rem rgba(0, 0, 0, 0.3); /* Sombra alrededor de la tarjeta */
+    }
+    
+    .card:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), inset 0 0 10rem rgba(0, 0, 0, 0.7); /* Sombra alrededor y dentro de la tarjeta */
+        transform: scale(1.1); /* Escalar la tarjeta */
+    }
+    
+    .card-image {
+        position: relative; /* Asegurar el contexto de posicionamiento */
+        overflow: hidden; /* Evitar que la imagen ampliada se salga del contenedor */
+        border-top-left-radius: 4rem; /* Bordes redondeados en la parte superior de la imagen */
+        border-top-right-radius: 4rem; /* Bordes redondeados en la parte superior de la imagen */
+    }
+    
+    .card-image1 {
+        width: 100%; /* Asegurar que la imagen ocupe todo el ancho del contenedor */
+        display: block; /* Asegurar que la imagen se comporte correctamente en el layout */
+        transition: transform 0.5s ease; /* Añadir transición suave para la transformación */
+    }
+    
+    .card:hover .card-image1 {
+        transform: scale(1.1); /* Escalar la imagen cuando se hace hover en la tarjeta */
+        transition: 2s;
+    }
+    
+    .card-titulo {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .card-texto {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+    }
+    
+    .card-descripcion {
+        font-size: 1.3rem;
+        text-transform: none;
+    }
+    
+    .zoom {
+        width: 80%; /* Ajustar tamaño según necesites */
+        height: auto; /* Mantiene la proporción de la imagen */
+    }
+    
+    .card-botons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: none;
+        gap: .6rem;
+        place-items: center;
+        
+    }
+    
+    .card-boton {
+        background-color: var(--pagina);
+        font-size: 1.5rem;
+        max-width: 70%;
+        margin-bottom: 10%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        
+        
+    }
+    
+    .github {
+        background-color: var(--github);
+        font-size: 1.5rem;
+        
+    }
+    
+    .card-boton:hover {
+        background-color: var(--secundario);
+    }
+    
+    .github:hover {
+        background-color: var(--secundario);
+        font-size: 1.5rem;
+    }
+    
+    .card-image__txt {
+        position: absolute; /* Posicionar el contenedor sobre la imagen */
+        bottom: 0; /* Posicionar en la parte inferior de la imagen */
+        height: 15%;
+        width: 100%; /* Asegurar que el contenedor cubra todo el ancho de la imagen */
+        background-color: var(--sombreado); /* Fondo sombreado con opacidad */
+    }
+    
+    .card-content {
+        margin-top: 3rem;
+    }
+}
