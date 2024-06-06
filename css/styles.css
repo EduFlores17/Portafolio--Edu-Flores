@@ -638,151 +638,84 @@ ul{
 
 /*--   proyectos.html   --*/
 /*--   proyectos.html   --*/
-.contcard__texto {
-    margin-top: 25rem;
-}
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5rem;
-    place-items: center;
-}
-
-.card {
-    background-color: var(--card);
-    border-radius: 4rem;
-    overflow: hidden; /* Para asegurar que los bordes de los elementos internos sigan el borde de la tarjeta */
-    transition: box-shadow 0.5s ease, transform 2s ease; 
-    box-shadow: 0 0 7rem rgba(0, 0, 0, 0.3); /* Sombra alrededor de la tarjeta */
-}
-
-.card:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), inset 0 0 10rem rgba(0, 0, 0, 0.7); /* Sombra alrededor y dentro de la tarjeta */
-    transform: scale(1.1); /* Escalar la tarjeta */
-}
-
-.card-image {
-    position: relative; /* Asegurar el contexto de posicionamiento */
-    overflow: hidden; /* Evitar que la imagen ampliada se salga del contenedor */
-    border-top-left-radius: 4rem; /* Bordes redondeados en la parte superior de la imagen */
-    border-top-right-radius: 4rem; /* Bordes redondeados en la parte superior de la imagen */
-}
-
-.card-image1 {
-    width: 100%; /* Asegurar que la imagen ocupe todo el ancho del contenedor */
-    display: block; /* Asegurar que la imagen se comporte correctamente en el layout */
-    transition: transform 0.5s ease; /* Añadir transición suave para la transformación */
-}
-
-.card:hover .card-image1 {
-    transform: scale(1.1); /* Escalar la imagen cuando se hace hover en la tarjeta */
-    transition: 2s;
-}
-
-.card-titulo {
-    font-size: 2rem;
-    margin-bottom: 3rem;
-}
-
-.card-texto {
-    font-size: 1.5rem;
-    text-transform: uppercase;
-}
-
-.card-descripcion {
-    font-size: 1.3rem;
-    text-transform: none;
-}
-
-.zoom {
-    width: 80%; /* Ajustar tamaño según necesites */
-    height: auto; /* Mantiene la proporción de la imagen */
-}
-
-.card-botons {
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    gap: .6rem;
-    place-content: center;
-    
-}
-
-.card-boton {
-    background-color: var(--pagina);
-    font-size: 1.5rem;
-    max-width: 100%;
-    margin-bottom: 10%;
-    place-items: center;
-    
-}
-
-.github {
-    background-color: var(--github);
-    font-size: 1.5rem;
-}
-
-.card-boton:hover {
-    background-color: var(--secundario);
-}
-
-.github:hover {
-    background-color: var(--secundario);
-    font-size: 1.5rem;
-}
-
-.card-image__txt {
-    position: absolute; /* Posicionar el contenedor sobre la imagen */
-    bottom: 0; /* Posicionar en la parte inferior de la imagen */
-    height: 25%;
-    width: 100%; /* Asegurar que el contenedor cubra todo el ancho de la imagen */
-    background-color: var(--sombreado); /* Fondo sombreado con opacidad */
-}
-
-.card-content {
-    margin-top: 3rem;
-}
-
-@media (min-width: 1100px){
-    .contcard__texto {
-        margin-top: 25rem;
+@media (min-width: 350px) {
+    .contcard{
+        margin-top: 70%;
     }
+
+    .carousel {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    
+    .cards-container {
+        overflow: hidden;
+        width: 100%;
+        padding: 5rem;
+        display: flex;
+        gap: 3rem;
+        transition: 2s ease;
+        justify-content: left;
+    }
+    
+
     
     .cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 5rem;
-        place-items: center;
+        display: flex;
+        gap: 2.8rem; /* Ajustar el espacio entre tarjetas */
+        transition: transform 0.5s ease;
+    }
+
+    .carousel-button {
+        background-color: var(--button-bg, #fff);
+        border: none;
+        padding: 1rem;
+        cursor: pointer;
+        z-index: 1;
     }
     
+    .left {
+        position: absolute;
+        left: 0;
+    }
+    
+    .right {
+        position: absolute;
+        right: 0;
+    }
+
     .card {
         background-color: var(--card);
         border-radius: 4rem;
-        overflow: hidden; /* Para asegurar que los bordes de los elementos internos sigan el borde de la tarjeta */
+        overflow: hidden;
         transition: box-shadow 0.5s ease, transform 2s ease; 
-        box-shadow: 0 0 7rem rgba(0, 0, 0, 0.3); /* Sombra alrededor de la tarjeta */
+        box-shadow: 0 0 7rem rgba(0, 0, 0, 0.3);
+        flex: 0 0 calc((79.2% - 6rem) / 4); /* Ajustar el ancho de cada tarjeta */
+        max-width: calc((48.2% - 25rem) / 3); /* Asegurar un tamaño máximo */
     }
     
     .card:hover {
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), inset 0 0 10rem rgba(0, 0, 0, 0.7); /* Sombra alrededor y dentro de la tarjeta */
-        transform: scale(1.1); /* Escalar la tarjeta */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), inset 0 0 10rem rgba(0, 0, 0, 0.7);
+        transform: scale(1.1);
     }
     
     .card-image {
-        position: relative; /* Asegurar el contexto de posicionamiento */
-        overflow: hidden; /* Evitar que la imagen ampliada se salga del contenedor */
-        border-top-left-radius: 4rem; /* Bordes redondeados en la parte superior de la imagen */
-        border-top-right-radius: 4rem; /* Bordes redondeados en la parte superior de la imagen */
+        position: relative;
+        overflow: hidden;
+        border-top-left-radius: 4rem;
+        border-top-right-radius: 4rem;
     }
     
     .card-image1 {
-        width: 100%; /* Asegurar que la imagen ocupe todo el ancho del contenedor */
-        display: block; /* Asegurar que la imagen se comporte correctamente en el layout */
-        transition: transform 0.5s ease; /* Añadir transición suave para la transformación */
+        width: 100%;
+        display: block;
+        transition: transform 0.5s ease;
     }
     
     .card:hover .card-image1 {
-        transform: scale(1.1); /* Escalar la imagen cuando se hace hover en la tarjeta */
+        transform: scale(1.1);
         transition: 2s;
     }
     
@@ -802,35 +735,30 @@ ul{
     }
     
     .zoom {
-        width: 80%; /* Ajustar tamaño según necesites */
-        height: auto; /* Mantiene la proporción de la imagen */
+        width: 80%;
+        height: auto;
     }
     
     .card-botons {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: none;
+        display: flex;
         gap: .6rem;
-        place-items: center;
-        
+        justify-content: center;
+        align-content: center;
     }
     
     .card-boton {
         background-color: var(--pagina);
         font-size: 1.5rem;
-        max-width: 70%;
-        margin-bottom: 10%;
+        max-width: 30%;
+        height: auto;
         display: flex;
         justify-content: center;
         align-content: center;
-        
-        
     }
     
     .github {
         background-color: var(--github);
         font-size: 1.5rem;
-        
     }
     
     .card-boton:hover {
@@ -843,11 +771,350 @@ ul{
     }
     
     .card-image__txt {
-        position: absolute; /* Posicionar el contenedor sobre la imagen */
-        bottom: 0; /* Posicionar en la parte inferior de la imagen */
+        position: absolute;
+        bottom: 0;
+        height: 25%;
+        width: 100%;
+        background-color: var(--sombreado);
+    }
+    
+    .card-content {
+        margin-top: 3rem;
+    }
+}
+
+@media (min-width: 410px
+){
+
+    .contcard{
+        margin-top: 70%;
+    }
+    .card {
+        background-color: var(--card);
+        border-radius: 4rem;
+        overflow: hidden;
+        transition: box-shadow 0.5s ease, transform 2s ease; 
+        box-shadow: 0 0 7rem rgba(0, 0, 0, 0.3);
+        flex: 0 0 calc((79.2% - 6rem) / 6); /* Ajustar el ancho de cada tarjeta */
+        max-width: calc((58.2% - 33rem) / 3); /* Asegurar un tamaño máximo */
+    }
+
+    .card-botons {
+        display: flex;
+        gap: .6rem;
+        justify-content: center;
+        align-content: center;
+    }
+    
+    .card-boton {
+        background-color: var(--pagina);
+        font-size: 1.5rem;
+        max-width: 30%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    .github {
+        background-color: var(--github);
+        font-size: 1.5rem;
+    }
+    .card-image__txt {
+        position: absolute;
+        bottom: 0;
+        height: 25%;
+        width: 100%;
+        background-color: var(--sombreado);
+    }
+}
+
+@media (min-width: 760px){
+    .contcard{
+        margin-top: 40%;
+    }
+}
+
+@media (min-width: 769px) {
+    .contcard{
+        margin-top: 30%;
+    }
+
+    .carousel {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    
+    .cards-container {
+        overflow: hidden;
+        width: 100%;
+        padding: 5rem;
+        display: flex;
+        gap: 3rem;
+        transition: 2s ease;
+        justify-content: left;
+    }
+    
+
+    
+    .cards {
+        display: flex;
+        gap: 2.8rem; /* Ajustar el espacio entre tarjetas */
+        transition: transform 0.5s ease;
+    }
+
+    .carousel-button {
+        background-color: var(--button-bg, #fff);
+        border: none;
+        padding: 1rem;
+        cursor: pointer;
+        z-index: 1;
+    }
+    
+    .left {
+        position: absolute;
+        left: 0;
+    }
+    
+    .right {
+        position: absolute;
+        right: 0;
+    }
+
+    .card {
+        background-color: var(--card);
+        border-radius: 4rem;
+        overflow: hidden;
+        transition: box-shadow 0.5s ease, transform 2s ease; 
+        box-shadow: 0 0 7rem rgba(0, 0, 0, 0.3);
+        flex: 0 0 calc((61.2% - 24%) / 2.07); /* Ajustar el ancho de cada tarjeta */
+        max-width: calc((47.2% - 6rem) / 3); /* Asegurar un tamaño máximo */
+    }
+    
+    .card:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), inset 0 0 10rem rgba(0, 0, 0, 0.7);
+        transform: scale(1.1);
+    }
+    
+    .card-image {
+        position: relative;
+        overflow: hidden;
+        border-top-left-radius: 4rem;
+        border-top-right-radius: 4rem;
+    }
+    
+    .card-image1 {
+        width: 100%;
+        display: block;
+        transition: transform 0.5s ease;
+    }
+    
+    .card:hover .card-image1 {
+        transform: scale(1.1);
+        transition: 2s;
+    }
+    
+    .card-titulo {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .card-texto {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+    }
+    
+    .card-descripcion {
+        font-size: 1.3rem;
+        text-transform: none;
+    }
+    
+    .zoom {
+        width: 80%;
+        height: auto;
+    }
+    
+    .card-botons {
+        display: flex;
+        gap: .6rem;
+        justify-content: center;
+        align-content: center;
+    }
+    
+    .card-boton {
+        background-color: var(--pagina);
+        font-size: 1.5rem;
+        max-width: 40%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    
+    .github {
+        background-color: var(--github);
+        font-size: 1.5rem;
+    }
+    
+    .card-boton:hover {
+        background-color: var(--secundario);
+    }
+    
+    .github:hover {
+        background-color: var(--secundario);
+        font-size: 1.5rem;
+    }
+    
+    .card-image__txt {
+        position: absolute;
+        bottom: 0;
+        height: 20%;
+        width: 100%;
+        background-color: var(--sombreado);
+    }
+    
+    .card-content {
+        margin-top: 3rem;
+    }
+}
+
+
+@media (min-width: 1100px) {
+
+    .contcard{
+        margin-top: 19%;
+    }
+
+    .carousel {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    
+    .cards-container {
+        overflow: hidden;
+        width: 100%;
+        padding: 5rem;
+        display: flex;
+        gap: 3rem;
+        transition: 2s ease;
+        justify-content: left;
+    }
+    
+
+    
+    .cards {
+        display: flex;
+        gap: 2.8rem; /* Ajustar el espacio entre tarjetas */
+        transition: transform 0.5s ease;
+    }
+
+    .carousel-button {
+        background-color: var(--button-bg, #fff);
+        border: none;
+        padding: 1rem;
+        cursor: pointer;
+        z-index: 1;
+    }
+    
+    .left {
+        position: absolute;
+        left: 0;
+    }
+    
+    .right {
+        position: absolute;
+        right: 0;
+    }
+
+    .card {
+        background-color: var(--card);
+        border-radius: 4rem;
+        overflow: hidden;
+        transition: box-shadow 0.5s ease, transform 2s ease; 
+        box-shadow: 0 0 7rem rgba(0, 0, 0, 0.3);
+        flex: 0 0 calc((61.2% - 23%) / 2); /* Ajustar el ancho de cada tarjeta */
+        max-width: calc((71.2% - 6rem) / 3); /* Asegurar un tamaño máximo */
+    }
+    
+    .card:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), inset 0 0 10rem rgba(0, 0, 0, 0.7);
+        transform: scale(1.1);
+    }
+    
+    .card-image {
+        position: relative;
+        overflow: hidden;
+        border-top-left-radius: 4rem;
+        border-top-right-radius: 4rem;
+    }
+    
+    .card-image1 {
+        width: 100%;
+        display: block;
+        transition: transform 0.5s ease;
+    }
+    
+    .card:hover .card-image1 {
+        transform: scale(1.1);
+        transition: 2s;
+    }
+    
+    .card-titulo {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .card-texto {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+    }
+    
+    .card-descripcion {
+        font-size: 1.3rem;
+        text-transform: none;
+    }
+    
+    .zoom {
+        width: 80%;
+        height: auto;
+    }
+    
+    .card-botons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: .6rem;
+        place-items: center;
+    }
+    
+    .card-boton {
+        background-color: var(--pagina);
+        font-size: 1.5rem;
+        max-width: 70%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    
+    .github {
+        background-color: var(--github);
+        font-size: 1.5rem;
+    }
+    
+    .card-boton:hover {
+        background-color: var(--secundario);
+    }
+    
+    .github:hover {
+        background-color: var(--secundario);
+        font-size: 1.5rem;
+    }
+    
+    .card-image__txt {
+        position: absolute;
+        bottom: 0;
         height: 15%;
-        width: 100%; /* Asegurar que el contenedor cubra todo el ancho de la imagen */
-        background-color: var(--sombreado); /* Fondo sombreado con opacidad */
+        width: 100%;
+        background-color: var(--sombreado);
     }
     
     .card-content {
